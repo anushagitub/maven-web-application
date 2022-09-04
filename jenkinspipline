@@ -2,6 +2,7 @@ node{
 def mavenHome = tool name: "maven3.8.6"
 properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([pollSCM('* * * * *')])])
 try{
+slackNotifications('STARTED')
 stage('CheckoutCode')
 {
 git branch: 'development', credentialsId: 'e6816c94-d5ed-4697-a308-b233b29d3946', url: 'https://github.com/anushagitub/maven-web-application.git'
