@@ -31,7 +31,7 @@ catch (e){
 slackNotifications(currentBulid.result)
 throw e 
 }
-finally {
+finally{
 slackNotifications(currentBulid.result)
 }
 
