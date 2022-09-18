@@ -6,6 +6,7 @@ echo "Job Name is: ${env.JOB_NAME}"
 
 properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([pollSCM('* * * * *')])])
 try{
+slackNotificaations('STARTED')
 stage('CheckoutCode'){
 git branch: 'development', credentialsId: 'e6816c94-d5ed-4697-a308-b233b29d3946', url: 'https://github.com/anushagitub/maven-web-application.git'
 }
