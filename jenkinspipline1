@@ -11,6 +11,7 @@ git branch: 'development', credentialsId: 'e6816c94-d5ed-4697-a308-b233b29d3946'
 stage('Build'){
 sh "${mavenHome}/bin/mvn clean package"
 }
+/*
 stage('ExecuteSonarQubeReport'){
 sh "${mavenHome}/bin/mvn clean sonar:sonar"
 }
@@ -23,4 +24,5 @@ sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@17
 
 }
 }
+*/
 }
